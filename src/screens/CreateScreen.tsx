@@ -15,7 +15,7 @@ export default function CreateScreen({ setTab }: { setTab: (i: number) => void }
 
   return (
     <div className="min-h-screen px-5 pt-10 pb-32 bg-[#0a0a0a]">
-      <h1 className="text-4xl font-bold mb-3">Create New Goal</h1>
+      <h1 className="text-4xl font-bold mb-3">Create New Goal 1.0.4</h1>
       <p className="text-gray-500 mb-10">Describe your big idea and we’ll help break it down</p>
 
       <div className="flex flex-col items-stretch">
