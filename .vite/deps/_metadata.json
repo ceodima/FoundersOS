@@ -1,58 +1,70 @@
 {
-  "hash": "00cf97c3",
+  "hash": "eb4b1cb7",
   "configHash": "63fed33a",
-  "lockfileHash": "6b7e5268",
-  "browserHash": "65d971f7",
+  "lockfileHash": "36c3a2c6",
+  "browserHash": "5d9e7edf",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "6fa6f1c9",
+      "fileHash": "787e7765",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "c512c404",
+      "fileHash": "a3a830b8",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "50b6c362",
+      "fileHash": "3a5befe4",
       "needsInterop": true
     },
     "@heroicons/react/24/outline": {
       "src": "../../node_modules/@heroicons/react/24/outline/esm/index.js",
       "file": "@heroicons_react_24_outline.js",
-      "fileHash": "882bb3d4",
+      "fileHash": "fabdc5e2",
       "needsInterop": false
     },
     "zustand": {
       "src": "../../node_modules/zustand/esm/index.mjs",
       "file": "zustand.js",
-      "fileHash": "826fb5af",
+      "fileHash": "9e9fec66",
       "needsInterop": false
     },
     "zustand/middleware": {
       "src": "../../node_modules/zustand/esm/middleware.mjs",
       "file": "zustand_middleware.js",
-      "fileHash": "8387c869",
+      "fileHash": "07b23ced",
       "needsInterop": false
     },
     "@tma.js/sdk": {
       "src": "../../node_modules/@tma.js/sdk/dist/index.js",
       "file": "@tma__js_sdk.js",
-      "fileHash": "8f60dd9a",
+      "fileHash": "9ccab176",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "7c4bcb6e",
+      "needsInterop": false
+    },
+    "clsx": {
+      "src": "../../node_modules/clsx/dist/clsx.mjs",
+      "file": "clsx.js",
+      "fileHash": "18236d3a",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-WNPTCGAH": {
-      "file": "chunk-WNPTCGAH.js"
+    "chunk-32E4H3EV": {
+      "file": "chunk-32E4H3EV.js"
     },
-    "chunk-5WRI5ZAA": {
-      "file": "chunk-5WRI5ZAA.js"
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
     }
   }
 }
