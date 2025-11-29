@@ -1,0 +1,53 @@
+name: Build and update docs on main
+
+on:
+  push:
+    branches: [ main ]
+    # Prevent recursion if only docs are changed
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch:
+
+concurrency:
+  group: 'deploy-docs'
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit build to docs
+        run: |
+          # Configure git user for the action
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -rf docs || true
+          cp -R dist docs
+          git add docs
+          if git diff --staged --quiet; then
+            echo "No changes in docs to commit"
+          else
+            git commit -m "chore(deploy): update docs from build"
+            git push origin main
+          fi
