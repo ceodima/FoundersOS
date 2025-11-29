@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import cloudWrapper from '../helpers/cloudStorageWrapper';
+import { createJSONStorage } from 'zustand/middleware';
 
 interface SubGoal {
   id: string;
@@ -65,6 +67,24 @@ export const useGoalsStore = create<GoalsStore>()(
           goals: state.goals.filter((g) => g.id !== goalId),
         })),
     }),
-    { name: 'founders-goals' }
+    {
+      name: 'founders-goals',
+      storage: createJSONStorage(() => cloudWrapper),
+      onRehydrateStorage: (state) => {
+        try {
+          // If we are running inside Telegram and cloud storage is supported, attempt to sync
+          // the rehydrated state to cloud as a best-effort sync. This ensures local changes
+          // are propagated to the user's cloud storage once their environment supports it.
+          // We do not await this call here to keep hydration fast.
+          import('@tma.js/sdk').then(({ cloudStorage }) => {
+            if (typeof cloudStorage?.isSupported === 'function' ? cloudStorage.isSupported() : cloudStorage?.isSupported) {
+              cloudStorage.setItem('founders-goals', JSON.stringify(state)).catch(() => {});
+            }
+          });
+        } catch (e) {
+          // ignore
+        }
+      },
+    }
   )
 );
