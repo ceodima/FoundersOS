@@ -14,7 +14,7 @@ try {
   SDKProvider = ({ children }: { children: React.ReactNode }) => <>{children}</>; // заглушка для dev
 }
 
-import App from './App';
+import App from './app';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
