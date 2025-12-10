@@ -7,7 +7,7 @@ import { componentTagger } from 'lovable-tagger';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/reactjs-template/',
+  base: '/FoundersOS/',
   css: {
     postcss: './postcss.config.js',
     preprocessorOptions: {
