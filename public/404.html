@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // This script takes the current URL and converts the path to a hash-based route
+      // so that the SPA can handle it properly
+      
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // Get the base path (repository name)
+      const basePath = '/FoundersOS';
+      
+      // Remove the base path from the current path
+      let route = path.replace(basePath, '') || '/';
+      
+      // Redirect to the index with hash routing
+      // Preserve any query parameters (like Telegram's tgWebAppStartParam)
+      window.location.replace(
+        basePath + '/' + search + '#' + route + hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
+
